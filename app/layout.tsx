@@ -14,9 +14,7 @@ type Props = {
 export default function RootLayout(props: Props) {
 	return (
 		<html lang='en'>
-			<body className='bg-linear-to-br from-slate-900 via-gray-900 to-black text-white font-sans'>
-				{props.children}
-			</body>
+			<body>{props.children}</body>
 		</html>
 	);
 }
