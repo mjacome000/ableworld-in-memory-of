@@ -26,22 +26,30 @@ const milestones = [
 
 export default function Timeline() {
 	return (
-		<div className='relative border-l border-neutral-300 ml-4 md:ml-0 md:mx-auto md:max-w-3xl'>
-			{milestones.map((item, index) => (
-				<motion.div
-					key={index}
-					initial={{ opacity: 0, x: -30 }}
-					whileInView={{ opacity: 1, x: 0 }}
-					viewport={{ once: true }}
-					transition={{ duration: 0.6, delay: index * 0.1 }}
-					className='mb-12 ml-6'
-				>
-					<div className='absolute -left-2 w-4 h-4 bg-neutral-700 rounded-full' />
-					<h3 className='text-xl font-semibold'>{item.year}</h3>
-					<h4 className='text-lg font-medium text-neutral-700'>{item.title}</h4>
-					<p className='text-neutral-600 mt-2'>{item.description}</p>
-				</motion.div>
-			))}
+		<div className='relative max-w-3xl mx-auto'>
+			<div className='absolute left-4 top-0 bottom-0 w-px bg-neutral-300' />
+
+			<div className='space-y-16'>
+				{milestones.map((item, index) => (
+					<motion.div
+						key={index}
+						initial={{ opacity: 0, x: -40 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true, amount: 0.4 }}
+						transition={{ duration: 0.7, delay: index * 0.1 }}
+						className='relative pl-12'
+					>
+						{/* Bullet (now animates properly) */}
+						<div className='absolute left-2 top-2 w-4 h-4 bg-neutral-700 rounded-full' />
+
+						<h3 className='text-xl font-semibold'>{item.year}</h3>
+						<h4 className='text-lg font-medium text-neutral-700 mt-1'>
+							{item.title}
+						</h4>
+						<p className='text-neutral-600 mt-2'>{item.description}</p>
+					</motion.div>
+				))}
+			</div>
 		</div>
 	);
 }

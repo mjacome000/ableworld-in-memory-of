@@ -11,6 +11,7 @@ export default function BackgroundMusic() {
 		if (playing) {
 			audioRef.current.pause();
 		} else {
+			audioRef.current.volume = 0.4;
 			audioRef.current.play();
 		}
 
@@ -23,7 +24,7 @@ export default function BackgroundMusic() {
 
 			<button
 				onClick={toggleAudio}
-				className='fixed bottom-6 right-6 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-md text-sm'
+				className='fixed bottom-6 right-6 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-md text-sm hover:bg-white transition'
 			>
 				{playing ? 'Mute Music' : 'Play Music'}
 			</button>

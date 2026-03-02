@@ -1,9 +1,8 @@
-import { ReactNode } from 'react';
 export default function Section({
 	children,
 	className = '',
 }: {
-	children: ReactNode;
+	children: React.ReactNode;
 	className?: string;
 }) {
 	return (
