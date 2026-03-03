@@ -8,7 +8,7 @@ export default function Home() {
 	const [language, setLanguage] = useState<string | null>(null);
 
 	return (
-		<main className='min-h-screen bg-neutral-50 text-neutral-900 overflow-hidden relative'>
+		<main className='min-h-screen overflow-hidden bg-neutral-50 relative'>
 			<AnimatePresence mode='wait'>
 				{!language ? (
 					<motion.div
